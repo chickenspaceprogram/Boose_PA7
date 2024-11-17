@@ -1,0 +1,3 @@
+[submodule "src/ctty"]
+	path = src/ctty
+	url = git@github.com:chickenspaceprogram/ctty

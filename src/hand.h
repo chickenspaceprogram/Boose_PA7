@@ -21,7 +21,7 @@ typedef struct hand {
     int freq_tbl[14];
 
     /**
-     * Function name: hand_check[None]
+     * Function name: Hand.hand_check[None]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -29,7 +29,7 @@ typedef struct hand {
      * Outputs: `true` if the hand has a pair, `false` if it does not
      */
     /**
-     * Function name: hand_check[Pair]
+     * Function name: Hand.hand_check[Pair]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -37,7 +37,7 @@ typedef struct hand {
      * Outputs: `true` if the hand has two pairs, `false` if it does not
      */
     /**
-     * Function name: hand_check[TwoPairs]
+     * Function name: Hand.hand_check[TwoPairs]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -45,7 +45,7 @@ typedef struct hand {
      * Outputs: `true` if the hand has three-of-a-kin, `false` if it does not
      */
     /**
-     * Function name: hand_check[ThreeKind]
+     * Function name: Hand.hand_check[ThreeKind]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -53,7 +53,7 @@ typedef struct hand {
      * Outputs: 
      */
     /**
-     * Function name: hand_check[FourKind]
+     * Function name: Hand.hand_check[FourKind]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -61,7 +61,7 @@ typedef struct hand {
      * Outputs: 
      */
     /**
-     * Function name: hand_check[FullHouse]
+     * Function name: Hand.hand_check[FullHouse]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -69,7 +69,7 @@ typedef struct hand {
      * Outputs: 
      */
     /**
-     * Function name: hand_check[Flush]
+     * Function name: Hand.hand_check[Flush]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 
@@ -77,7 +77,7 @@ typedef struct hand {
      * Outputs: 
      */
     /**
-     * Function name: hand_check[Straight]
+     * Function name: Hand.hand_check[Straight]
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: 

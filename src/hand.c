@@ -1,5 +1,6 @@
 #include "hand.h"
 
+// fn headers are in hand.h
 bool hand_is_none(Hand *hand);
 bool hand_is_pair(Hand *hand);
 bool hand_is_two_pairs(Hand *hand);
@@ -8,14 +9,34 @@ bool hand_is_four_kind(Hand *hand);
 bool hand_is_full_house(Hand *hand);
 bool hand_is_flush(Hand *hand);
 bool hand_is_straight(Hand *hand);
-
 HandType find_best_hand(Hand *hand);
-
 void draw_cards(Hand *hand, Deck *deck);
 void set_frequencies(Hand *hand);
 
 /* private */
+
+/**
+ * Function name: get_straight_len
+ * Date created: 2024-10-12
+ * Date last modified: 2024-11-17
+ * Description: Gets the length of the longest straight in `hand`.
+ * Inputs: 
+ * `hand` : The hand in which to find the length of the longest straight.
+ * Outputs: The length of the longest straight in `hand`.
+ */
 static int get_straight_len(Hand *hand);
+
+/**
+ * Function name: set_arr_to_val
+ * Date created: 2024-11-17
+ * Date last modified: 2024-11-17
+ * Description: Sets all values in an array to a certain value.
+ * Inputs: 
+ * `arr` : The array
+ * `val` : The value
+ * `len` : The length of the array
+ * Outputs: none
+ */
 static void set_arr_to_val(bool *arr, bool val, int len);
 
 Hand newHand(void) {

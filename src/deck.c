@@ -10,24 +10,19 @@
  */
 static void fill_deck_suit(Deck *deck, int start_index, Suit suit);
 
-/**
- * Function name: shuffle
- * Date created: 2024-11-17
- * Date last modified: 2024-11-17
- * Description: An implementation of the Durstenfeld version of the Fisher-Yates shuffle algorithm.
- *              Credit to: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
- * Inputs: 
- * Outputs: none
- */
 static void shuffle(Deck *deck);
+
+static Card draw(Deck *deck);
 
 Deck newDeck(void) {
     Deck deck;
     deck.shuffle = &shuffle;
+    deck.draw = &draw;
+    deck.current_card = 0;
 
     // couldve used a loop but oh well
     fill_deck_suit(&deck, 0, Clubs);
-    fill_deck_suit(&deck, NUM_RANKS, Diamonds);
+    fill_deck_suit(&deck, NUM_RANKS, Diamonds); // could've used a static variable inside fill_deck_suit but this is more clear
     fill_deck_suit(&deck, 2 * NUM_RANKS, Hearts);
     fill_deck_suit(&deck, 3 * NUM_RANKS, Spades);
     
@@ -52,4 +47,8 @@ void shuffle(Deck *deck) {
         deck->cards[i] = deck->cards[rand_index];
         deck->cards[rand_index] = temp;
     }
+}
+
+Card draw(Deck *deck) {
+    return deck->cards[(deck->current_card)++];
 }

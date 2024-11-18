@@ -21,18 +21,39 @@ typedef struct card {
 
 typedef struct deck {
     Card cards[NUM_CARDS];
+    int current_card;
 
     /**
-     * Function name: Deck.shuffle
+     * Function name: shuffle
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
-     * Description: 
+     * Description: An implementation of the Durstenfeld version of the Fisher-Yates shuffle algorithm.
+     *              Credit to: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
      * Inputs: 
-     * Outputs: 
+     * Outputs: none
      */
     void (*shuffle)(Deck *);
+
+    /**
+     * Function name: draw
+     * Date created: 2024-11-18
+     * Date last modified: 2024-11-18
+     * Description: Draws a card off the top of the deck, and returns it.
+     * Inputs:
+     * `Deck *` : A pointer to the deck to draw from.
+     * Outputs: The card that was drawn.
+     */
+    Card (*draw)(Deck *);
 } Deck;
 
+/**
+ * Function name: newDeck
+ * Date created: 2024-11-18
+ * Date last modified: 2024-11-18
+ * Description: Instantiates a new `Deck`, and shuffles it.
+ * Inputs: none
+ * Outputs: The new `Deck`.
+ */
 Deck newDeck(void);
 
 #endif

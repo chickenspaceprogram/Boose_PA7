@@ -1,6 +1,9 @@
 #ifndef HAND_H
 #define HAND_H
 
+#define HAND_SIZE       5
+#define NUM_HAND_TYPES  8
+
 #include <stdbool.h>
 #include "deck.h"
 
@@ -17,8 +20,9 @@ typedef enum hand_type {
 
 // i love function pointers
 typedef struct hand {
-    Card cards[5];
-    int freq_tbl[14];
+    Card cards[HAND_SIZE];
+    bool redraw[HAND_SIZE]; // which cards to redraw
+    int frequencies[NUM_RANKS];
 
     /**
      * Function name: Hand.hand_check[None]
@@ -84,9 +88,36 @@ typedef struct hand {
      * Inputs: 
      * Outputs: 
      */
-    bool (*hand_check[8])(Hand *);  // the function comments make this extra cursed :)
+    bool (*hand_check[NUM_HAND_TYPES])(Hand *);  // the function comments make this extra cursed :)
+
+    /**
+     * Function name: find_best_hand
+     * Date created: 
+     * Date last modified: 
+     * Description: 
+     * Inputs:
+     * Outputs: 
+     */
     HandType (*find_best_hand)(Hand *);
-    void (*draw_cards)(Hand *);
+
+    /**
+     * Function name: draw_cards
+     * Date created: 
+     * Date last modified: 
+     * Description: 
+     * Inputs:
+     * Outputs: 
+     */
+    void (*draw_cards)(Hand *, Deck *);
+
+    /**
+     * Function name: set_frequencies
+     * Date created: 
+     * Date last modified: 
+     * Description: 
+     * Inputs:
+     * Outputs: 
+     */
     void (*set_frequencies)(Hand *);
 } Hand;
 

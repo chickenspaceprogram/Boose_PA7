@@ -1,5 +1,5 @@
 #ifndef DEALER_H
-#define DEALER_h
+#define DEALER_H
 
 
 

@@ -9,7 +9,7 @@ bool hand_is_full_house(Hand *hand);
 bool hand_is_flush(Hand *hand);
 bool hand_is_straight(Hand *hand);
 
-int find_best_hand(Hand *hand);
+HandType find_best_hand(Hand *hand);
 
 void draw_cards(Hand *hand, Deck *deck);
 void set_frequencies(Hand *hand);
@@ -113,10 +113,10 @@ bool hand_is_straight(Hand *hand) {
     return true;
 }
 
-int find_best_hand(Hand *hand) {
+HandType find_best_hand(Hand *hand) {
     for (int i = NUM_HAND_TYPES - 1; i >= 0; --i) {
         if (hand->hand_check[i](hand)) { // an array of function pointers was an interesting design choice but it paid off here
-            return i;
+            return (HandType)i; // the rust programmer in me hates typecasting int -> enum but it is convenient
         }
     }
     return 0; // should never return here

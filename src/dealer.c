@@ -23,7 +23,7 @@ void set_redraws(Hand *hand, HandType type) {
         case Straight: case Flush: case FullHouse:
             return;
         case None:
-            for (int i = 0; i < HAND_SIZE; ++i) {
+            for (int i = 0; i < 3; ++i) {
                 hand->redraw[i] = true;
             }
             return;

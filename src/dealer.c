@@ -55,7 +55,6 @@ void set_redraws(Hand *hand, HandType type) {
 
     }
     find_redraws(hand, ranks_to_redraw, counter);
-    //puts("wahafdjsa;lfdja");
     return;
 }
 

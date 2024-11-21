@@ -5,7 +5,7 @@ Hand deal_player(Deck *deck) {
     hand.draw_cards(&hand, deck);
     Option options[HAND_SIZE];
     for (int i = 0; i < HAND_SIZE; ++i) {
-        options[i].msg = (unsigned char *)alloc_card_str(hand.cards[i]);
+        options[i].msg = (unsigned char *)alloc_card_str(hand.cards[i], i + 1);
         if (options[i].msg == NULL) {
             for (int j = 0; j < i; ++i) {
                 free(options[i].msg);
@@ -18,14 +18,14 @@ Hand deal_player(Deck *deck) {
     puts("\nTo select a card to redraw, press [Space].\nTo confirm your selections, press [Enter].\n\nYou may select at most 3 cards to redraw.\n\n");
     multimenu(options, (unsigned char *)"Redraw Selection", HAND_SIZE, hand.redraw, 3);
     hand.draw_cards(&hand, deck);
-    for (int i = 0; i < NUM_CARDS; ++i) {
+    for (int i = 0; i < HAND_SIZE; ++i) {
         free(options[i].msg);
     }
     return hand;
 
 }
 
-char *alloc_card_str(Card card) {
+char *alloc_card_str(Card card, int index) {
     char *suit, *rank, *output;
     char chr[2];
     switch (card.suit) {
@@ -64,7 +64,7 @@ char *alloc_card_str(Card card) {
             rank = "King";
             break;
     }
-    if (asprintf(&output, "%s of %s", rank, suit) == -1) {// gotta free!
+    if (asprintf(&output, "%d. %s of %s", index, rank, suit) == -1) {// gotta free!
         return NULL;
     }
     return output;

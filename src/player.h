@@ -8,8 +8,6 @@
 
 Hand deal_player(Deck *deck);
 
-void set_redraws(Hand *hand, HandType type);
-
-char *alloc_card_str(Card card);
+char *alloc_card_str(Card card, int index);
 
 #endif

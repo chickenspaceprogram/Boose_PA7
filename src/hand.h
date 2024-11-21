@@ -18,8 +18,10 @@ typedef enum hand_type {
     Straight,
 } HandType;
 
+
+typedef struct hand Hand;
 // i love function pointers
-typedef struct hand {
+struct hand {
     Card cards[HAND_SIZE];
     bool redraw[HAND_SIZE]; // which cards to redraw
     int frequencies[NUM_RANKS];
@@ -132,7 +134,7 @@ typedef struct hand {
      * Outputs: none
      */
     void (*set_frequencies)(Hand *);
-} Hand;
+};
 
 Hand newHand(void);
 

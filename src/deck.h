@@ -19,7 +19,8 @@ typedef struct card {
     Suit suit;
 } Card;
 
-typedef struct deck {
+typedef struct deck Deck;
+struct deck {
     Card cards[NUM_CARDS];
     int current_card;
 
@@ -44,7 +45,7 @@ typedef struct deck {
      * Outputs: The card that was drawn.
      */
     Card (*draw)(Deck *);
-} Deck;
+};
 
 /**
  * Function name: newDeck

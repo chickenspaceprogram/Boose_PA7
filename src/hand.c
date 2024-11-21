@@ -56,6 +56,7 @@ Hand newHand(void) {
     hand.find_best_hand = &find_best_hand;
     hand.draw_cards = &draw_cards;
     hand.set_frequencies = &set_frequencies;
+    return hand;
 }
 
 

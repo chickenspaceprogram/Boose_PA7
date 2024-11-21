@@ -8,6 +8,7 @@ Hand deal_dealer(Deck *deck) {
     // checking type, setting redraws
     HandType type = dealer_hand.find_best_hand(&dealer_hand);
     set_redraws(&dealer_hand, type);
+    puts("wahafdjsa;lfdja");
 
     // redrawing
     dealer_hand.draw_cards(&dealer_hand, deck);
@@ -54,6 +55,8 @@ void set_redraws(Hand *hand, HandType type) {
 
     }
     find_redraws(hand, ranks_to_redraw, counter);
+    //puts("wahafdjsa;lfdja");
+    return;
 }
 
 void find_redraws(Hand *hand, int *ranks_to_redraw, int num_ranks_redraw) {

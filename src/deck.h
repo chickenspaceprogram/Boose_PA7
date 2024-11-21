@@ -6,6 +6,7 @@
 #define NUM_CARDS NUM_RANKS * NUM_SUITS
 
 #include "rand.h"
+#include <stdio.h>
 
 typedef enum suit {
     Clubs,

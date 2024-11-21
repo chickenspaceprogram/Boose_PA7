@@ -4,6 +4,7 @@
 
 #include "hand.h"
 
+
 Hand deal_dealer(Deck *deck);
 
 void set_redraws(Hand *hand, HandType type);

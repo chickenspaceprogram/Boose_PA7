@@ -7,6 +7,9 @@
 #include <stdbool.h>
 #include "deck.h"
 
+#include <stdio.h>
+#include "ctty/screen/screen.h"
+
 typedef enum hand_type {
     None = 0,
     Pair,
@@ -17,6 +20,11 @@ typedef enum hand_type {
     Flush,
     Straight,
 } HandType;
+
+typedef enum states {
+    InStraight,
+    NotInStraight,
+} States;
 
 
 typedef struct hand Hand;

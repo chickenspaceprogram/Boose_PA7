@@ -87,7 +87,7 @@ void print_hand_type(HandType type) {
             fputs("no scoring combination", stdout);
             break;
         case Pair:
-            fputs("pair", stdout);
+            fputs("a pair", stdout);
             break;
         case TwoPairs:
             fputs("two pairs", stdout);
@@ -99,13 +99,13 @@ void print_hand_type(HandType type) {
             fputs("four of a kind ", stdout);
             break;
         case FullHouse:
-            fputs("full hours", stdout);
+            fputs("a full house", stdout);
             break;
         case Flush:
-            fputs("flush", stdout);
+            fputs("a flush", stdout);
             break;
         case Straight:
-            fputs("straight", stdout);
+            fputs("a straight", stdout);
             break;
     }
 }

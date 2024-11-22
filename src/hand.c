@@ -16,17 +16,6 @@ void set_frequencies(Hand *hand);
 /* private */
 
 /**
- * Function name: get_straight_len
- * Date created: 2024-10-12
- * Date last modified: 2024-11-17
- * Description: Gets the length of the longest straight in `hand`.
- * Inputs: 
- * `hand` : The hand in which to find the length of the longest straight.
- * Outputs: The length of the longest straight in `hand`.
- */
-static int get_straight_len(Hand *hand);
-
-/**
  * Function name: set_arr_to_val
  * Date created: 2024-11-17
  * Date last modified: 2024-11-17
@@ -130,10 +119,28 @@ bool hand_is_flush(Hand *hand) {
 }
 
 bool hand_is_straight(Hand *hand) {
-    if (get_straight_len(hand) != 5) {
-        return false;
+    hand->set_frequencies(hand);
+    States state = NotInStraight;
+    int straight_len = 0;
+    for (int i = 0; i < NUM_RANKS; ++i) {
+        if (state == InStraight) {
+            if (straight_len == 5) {
+                return true;
+            }
+            if (hand->frequencies[i] != 1) {
+                return false;
+            }
+            ++straight_len;
+        }
+        else if (hand->frequencies[i] == 1) {
+            state = InStraight;
+            straight_len = 1;
+        }
     }
-    return true;
+    if (straight_len == 5) {
+        return true;
+    }
+    return false;
 }
 
 HandType find_best_hand(Hand *hand) {
@@ -164,29 +171,6 @@ void set_frequencies(Hand *hand) {
 }
 
 /* private */
-
-int get_straight_len(Hand *hand) {
-	int longest_straight_len = 0, current_straight_len = 0;
-
-	for (int i = 0; i < NUM_RANKS; ++i) {
-		// if there is at least one die with the current value, increase the straight length
-		if (hand->frequencies[i] == 1) {
-			++current_straight_len;
-		}
-		else {
-			// otherwise, the straight has ended, so figure out whether it's the longest
-			if (current_straight_len > longest_straight_len) {
-				longest_straight_len = current_straight_len;
-			}
-			current_straight_len = 0;
-		}
-	}
-	// we could've ended our loop on a straight, so check how long it is
-	if (current_straight_len > longest_straight_len) {
-		longest_straight_len = current_straight_len;
-	}
-	return longest_straight_len;
-}
 
 void set_arr_to_val(bool *arr, bool val, int len) {
     for (int i = 0; i < len; ++i) {

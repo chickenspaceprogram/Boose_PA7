@@ -8,7 +8,6 @@ Hand deal_dealer(Deck *deck) {
     // checking type, setting redraws
     HandType type = dealer_hand.find_best_hand(&dealer_hand);
     set_redraws(&dealer_hand, type);
-    puts("wahafdjsa;lfdja");
 
     // redrawing
     dealer_hand.draw_cards(&dealer_hand, deck);

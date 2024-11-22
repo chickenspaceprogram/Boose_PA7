@@ -1,10 +1,6 @@
-#include "player.h"
-#include "dealer.h"
+#include "poker.h"
 
 int main(void) {
     seed_rand();
-    Deck deck = newDeck();
-    Hand dealer = deal_dealer(&deck);
-    Hand player = deal_player(&deck);
-    
+    play_poker();
 }

@@ -109,8 +109,9 @@ bool hand_is_four_kind(Hand *hand) {
 }
 
 bool hand_is_full_house(Hand *hand) {
-    for (int i = 0; i < NUM_RANKS; ++i) {
-        if ((hand->frequencies[i] != 3) && (hand->frequencies[i] != 2) && (hand->frequencies[i] != 0)) {
+    Suit suit = hand->cards[0].suit;
+    for (int i = 1; i < NUM_RANKS; ++i) {
+        if (suit != hand->cards[i].suit) {
             return false;
         }
     }

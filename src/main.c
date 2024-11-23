@@ -12,6 +12,7 @@ int main(void) {
     size_t selection;
     do {
         CLEAR_SCREEN();
+        puts("To select an option, press the associated number key, use the arrow keys, or press J or K.\n\nThen, press [Enter] to confirm and submit your selection.\n");
         selection = menu(options, "Poker Main Menu", 3);
         switch (selection) {
             case 0:

@@ -15,7 +15,7 @@ Hand deal_player(Deck *deck) {
     }
     options[0].sequence = (unsigned char *)"1"; options[1].sequence = (unsigned char *)"2"; options[2].sequence = (unsigned char *)"3"; options[3].sequence = (unsigned char *)"4"; options[4].sequence = (unsigned char *)"5"; // lazy but it works :)
     CLEAR_SCREEN();
-    puts("\nTo select a card to redraw, press [Space].\nTo confirm your selections, press [Enter].\n\nYou may select at most 3 cards to redraw.\n\n");
+    puts("Use the arrow keys or the associated number to navigate to your desired option.\nThen, press [Space] to select that option.\nYou can select up to 3 options.\n\nTo confirm your current selections, press [Enter].\n\n");
     multimenu(options, (unsigned char *)"Redraw Selection", HAND_SIZE, hand.redraw, 3);
     hand.draw_cards(&hand, deck);
     for (int i = 0; i < HAND_SIZE; ++i) {

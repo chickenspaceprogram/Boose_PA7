@@ -2,5 +2,25 @@
 POKER RULES
 --------------------------------------------------------------------------------
 
-the rules go here i guess
+The goal of Poker is to draw better cards than your opponent, who, in this 
+implementation, is controlled by the computer. To do this, you must draw one of
+several scoring combinations, listed below in order of precedence, from worst
+(and most likely) to best (and least likely). 
 
+If your combination is lower down on the following chart than that of the
+computer, you win! If you and the dealer have the same combination of cards,
+you tie, and if your combination is higher on this chart than that of the
+dealer, you lose.
+
++-----------------+------------------------------------------------------------+
+|   COMBINATION   |                        DESCRIPTION                         |
++-----------------+------------------------------------------------------------+
+| None            |                   No scoring combination                   |
+| Pair            |                Two cards with the same rank                |
+| Two Pairs       |                         Two Pairs                          |
+| Three of a kind |               Three cards with the same rank               |
+| Four of a kind  |               Four cards with the same rank                |
+| Full House      | Three cards with one rank, and two cards with another rank |
+| Flush           |               Five cards with the same suit                |
+| Straight        |             Five cards with consecutive ranks              |
++-----------------+------------------------------------------------------------+

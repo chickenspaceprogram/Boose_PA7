@@ -1,6 +1,6 @@
---------------------------------------------------------------------------------
-POKER RULES
---------------------------------------------------------------------------------
+(0lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk
+x(B                                 [1mPOKER RULES[22m                                  (0x
+mqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B
 
 The goal of Poker is to draw better cards than your opponent, who, in this 
 implementation, is controlled by the computer. To do this, you must draw one of
@@ -12,15 +12,20 @@ computer, you win! If you and the dealer have the same combination of cards,
 you tie, and if your combination is higher on this chart than that of the
 dealer, you lose.
 
-+-----------------+------------------------------------------------------------+
-|   COMBINATION   |                        DESCRIPTION                         |
-+-----------------+------------------------------------------------------------+
-| None            |                   No scoring combination                   |
-| Pair            |                Two cards with the same rank                |
-| Two Pairs       |                         Two Pairs                          |
-| Three of a kind |               Three cards with the same rank               |
-| Four of a kind  |               Four cards with the same rank                |
-| Full House      | Three cards with one rank, and two cards with another rank |
-| Flush           |               Five cards with the same suit                |
-| Straight        |             Five cards with consecutive ranks              |
-+-----------------+------------------------------------------------------------+
+(0lqqqqqqqqqqqqqqqqqwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk
+x(B   [1mCOMBINATION[22m   (0x(B                        [1mDESCRIPTION[22m                         (0x
+tqqqqqqqqqqqqqqqqqnqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqu
+x(B            [1mNone[22m (0x(B No scoring combination                                     (0x
+x(B            [1mPair[22m (0x(B Two cards with the same rank                               (0x
+x(B       [1mTwo Pairs[22m (0x(B Two Pairs                                                  (0x
+x(B [1mThree of a kind[22m (0x(B Three cards with the same rank                             (0x
+x(B  [1mFour of a kind[22m (0x(B Four cards with the same rank                              (0x
+x(B      [1mFull House[22m (0x(B Three cards with one rank, and two cards with another rank (0x
+x(B           [1mFlush[22m (0x(B Five cards with the same suit                              (0x
+x(B        [1mStraight[22m (0x(B Five cards with consecutive ranks                          (0x
+mqqqqqqqqqqqqqqqqqvqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B
+
+You'll get one opportunity to redraw up to three cards in hopes of bettering
+your hand. Be careful, though, you might get unlucky!
+
+Press any key to continue . . .

@@ -21,5 +21,7 @@ add_executable(Boose_PA7
             ../src/rand.c	
             ../src/rand.h
             ../src/poker.h
-            ../src/poker.c)
+            ../src/poker.c
+            ../src/help.h
+            ../src/help.c)
 target_link_libraries(Boose_PA7 ctty)

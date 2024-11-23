@@ -1,4 +1,5 @@
 #include "poker.h"
+#include "help.h"
 
 int main(void) {
     seed_rand();
@@ -17,8 +18,11 @@ int main(void) {
                 play_poker();
                 break;
             case 1:
-                printf("hi lol");
+                CLEAR_SCREEN();
+                puts(CURSOR_OFF);
+                help(stdout);
                 PAUSE();
+                puts(CURSOR_ON);
                 break;
             default:
                 break;

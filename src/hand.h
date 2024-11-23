@@ -94,7 +94,7 @@ struct hand {
      * Date created: 2024-11-17
      * Date last modified: 2024-11-17
      * Description: Checks whether the hand contains a flush.
-     * Inputs: '
+     * Inputs: 
      * `Hand *` : The hand in which to check.
      * Outputs: `true` if the hand has a flush, `false` if it does not
      */

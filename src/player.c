@@ -64,8 +64,10 @@ char *alloc_card_str(Card card, int index) {
             rank = "King";
             break;
     }
-    if (asprintf(&output, "%d. %s of %s", index, rank, suit) == -1) {// gotta free!
+    output = calloc(100, sizeof(char)); // very oversized but oh well
+    if (output == NULL) {\
         return NULL;
     }
+    sprintf(output, "%d. %s of %s", index, rank, suit);
     return output;
 }

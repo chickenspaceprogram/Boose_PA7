@@ -30,7 +30,7 @@ void set_redraws(Hand *hand, HandType type) {
         case FourKind:
             for (int i = 0; i < NUM_RANKS; ++i) {
                 if (hand->frequencies[i] == 1) {
-                    ranks_to_redraw[i] = i;
+                    ranks_to_redraw[counter] = i;
                     ++counter;
                 }
             }
@@ -38,7 +38,7 @@ void set_redraws(Hand *hand, HandType type) {
         case ThreeKind:
             for (int i = 0; i < NUM_RANKS; ++i) {
                 if (hand->frequencies[i] > 0 && hand->frequencies[i] != 3) {
-                    ranks_to_redraw[i] = i;
+                    ranks_to_redraw[counter] = i;
                     ++counter;
                 }
             }
@@ -46,7 +46,7 @@ void set_redraws(Hand *hand, HandType type) {
         case TwoPairs: case Pair:
             for (int i = 0; i < NUM_RANKS; ++i) {
                 if (hand->frequencies[i] > 0 && hand->frequencies[i] != 2) {
-                    ranks_to_redraw[i] = i;
+                    ranks_to_redraw[counter] = i;
                     ++counter;
                 }
             }
